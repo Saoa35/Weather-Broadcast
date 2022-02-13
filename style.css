@@ -1,3 +1,7 @@
+body {
+    width: 600px;
+}
+
 header {
     background-color: rgb(111, 160, 224);
     height: 100px;
@@ -13,6 +17,7 @@ header {
     color: rgb(53, 131, 8);
 }
 
-section {
-    
-}
+/* section {
+
+} */
+
