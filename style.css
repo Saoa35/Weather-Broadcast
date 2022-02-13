@@ -1,0 +1,13 @@
+header {
+    background-color: rgb(111, 160, 224);
+    height: 100px;
+}
+
+#mainText {
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
