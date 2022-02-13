@@ -5,9 +5,10 @@ header {
 
 #mainText {
     display: flex;
-    font-size: 25px;
+    font-size: 35px;
+    font-family: cursive;
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    color: rgb(53, 131, 8);
 }
