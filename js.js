@@ -11,13 +11,15 @@ function getWearher (url) {
                     output.textContent = '';
                     output.textContent += '  ' + json.name;
                     output.textContent += '  ' + json.weather[0].description;
-                    output.textContent += '  ' + Math.trunc((json.main.temp - 32) / 1.8);
-
+                    output.textContent += '  ' + Math.trunc((json.main.temp - 32) / 1.8) + '℃';
+                    const img = document.createElement('img');
+                    img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
+                    output.append(img);
                 })
                 // .then(item => console.log(item))
                 .catch(error => console.log(error.message));
 }
 
-getWearher(urlKyiv);
+// getWearher(urlKyiv);
 // getWearher(urlLondon);
-// getWearher(urlNewYork);
+getWearher(urlNewYork);
