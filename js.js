@@ -20,6 +20,6 @@ function getWearher (url, div) {
                 .catch(error => console.log(error.message));
 }
 
-// getWearher(urlKyiv);
-// getWearher(urlLondon);
-getWearher(urlNewYork, output);
+getWearher(urlKyiv, outputKyiv);
+getWearher(urlLondon, outputLondon);
+getWearher(urlNewYork, outputNewYork);
