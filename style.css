@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
     width: 600px;
 }
 
@@ -17,7 +20,11 @@ header {
     color: rgb(53, 131, 8);
 }
 
-/* section {
+section {
+    background-color: rgb(206, 202, 205);
+}
 
-} */
-
+footer {
+    background-color: rgb(104, 45, 91);
+    height: 30px;
+}
