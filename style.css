@@ -1,8 +1,14 @@
 body {
-    display: flex;
+    /* display: flex; */
     /* flex-direction: column; */
-    justify-content: center;
+    /* justify-content: center; */
     width: 600px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 header {
@@ -22,6 +28,10 @@ header {
 
 section {
     background-color: rgb(206, 202, 205);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items:center;
 }
 
 footer {
