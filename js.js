@@ -7,12 +7,14 @@ function getWearher (url, div) {
     fetch(url) 
                 .then(resp => resp.json())
                 .then(json => {
-                    div.textContent = '';
-                    div.textContent += '  ' + json.name;
-                    div.textContent += '  ' + json.weather[0].description;
-                    div.textContent += '  ' + Math.trunc((json.main.temp - 32) / 1.8) + ' ℃';
+                    // div.textContent = '';
+                    const p = document.createElement('p');
+                    p.textContent += '  ' + json.name;
+                    p.textContent += '  ' + json.weather[0].description;
+                    p.textContent += '  ' + Math.trunc((json.main.temp - 32) / 1.8) + ' ℃';
                     const img = document.createElement('img');
                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
+                    div.append(p);
                     div.append(img);
                 })
                 // .then(item => console.log(item))
