@@ -11,7 +11,7 @@ function getWearher (url, div) {
                     const p = document.createElement('p');
                     p.textContent += '  ' + json.name;
                     p.textContent += '  ' + json.weather[0].description;
-                    p.textContent += '  ' + Math.trunc((json.main.temp - 32) / 1.8) + ' ℃';
+                    p.textContent += '  ' + Math.round(json.main.temp - 273.15) + ' ℃';
                     const img = document.createElement('img');
                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
                     div.append(p);
