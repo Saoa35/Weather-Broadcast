@@ -9,9 +9,9 @@ function getWearher (url, div) {
                 .then(json => {
                     // div.textContent = '';
                     const p = document.createElement('p');
-                    p.textContent += '  ' + json.name;
-                    p.textContent += '  ' + json.weather[0].description;
-                    p.textContent += '  ' + Math.round(json.main.temp - 273.15) + ' ℃';
+                    p.innerText += '  ' + json.name;
+                    p.innerText += '  ' + json.weather[0].description;
+                    p.innerText += '  ' + Math.round(json.main.temp - 273.15) + ' ℃';
                     const img = document.createElement('img');
                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
                     div.append(p);
