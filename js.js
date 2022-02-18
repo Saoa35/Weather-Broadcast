@@ -3,6 +3,19 @@ let urlKyiv = 'http://api.openweathermap.org/data/2.5/weather?id=703448&appid=bf
 let urlLondon = 'http://api.openweathermap.org/data/2.5/weather?id=2643743&appid=bf35cac91880cb98375230fb443a116f';
 let urlNewYork = 'http://api.openweathermap.org/data/2.5/weather?id=5128638&appid=bf35cac91880cb98375230fb443a116f';
 
+let winterImg = document.createElement('img');
+winterImg.src = 'url("Winter.jpg")';
+
+let body = document.querySelector('body');
+// body.style.background = 'url("Winter.jpg")';
+body.style.background = winterImg;
+
+// function bodyBackground () {
+//     let currentDate = new Date();
+//     console.log(currentDate);
+// }
+
+
 
     function getWearher (url, div) {
         fetch(url) 
@@ -24,6 +37,6 @@ let urlNewYork = 'http://api.openweathermap.org/data/2.5/weather?id=5128638&appi
                 .catch(error => console.log(error.message));
     }
 
-setInterval(getWearher(urlKyiv, outputKyiv), 600000);
-setInterval(getWearher(urlLondon, outputLondon), 600000);
-setInterval(getWearher(urlNewYork, outputNewYork), 600000);
+setInterval(getWearher(urlKyiv, outputKyiv), 300000);
+setInterval(getWearher(urlLondon, outputLondon), 300000);
+setInterval(getWearher(urlNewYork, outputNewYork), 300000);
