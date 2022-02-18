@@ -1,8 +1,9 @@
 body {
     width: 500px;
-    display: block;
-    margin: 0 auto;
-    background-color:rgb(203, 178, 207);
+    /* display: block; */
+    margin: auto;
+    margin-top: 10px;
+    /* background-color:rgb(232, 206, 236); */
 }
 
 main{
@@ -31,6 +32,15 @@ section {
 
 section>div>li {
     list-style: none;
+    color:rgb(4, 29, 138);
+    font-size:medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+}
+
+section>div :first-child {
+    font-size: 25px;
+    font-weight: bold;
+
 }
 
 
