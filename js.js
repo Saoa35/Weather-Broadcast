@@ -10,27 +10,29 @@ let winterImg = 'url("Winter.jpg") no-repeat',
 
 let body = document.querySelector('body');
 
-function bodyBackground() {
-    let background;
-    let currentDate = new Date();
-    let winterDateStart = new Date(2022, 0, 1),
-        springDateStart = new Date(2022, 2, 1),
-        summerDateStart = new Date(2022, 5, 1),
-        autumnDateStart = new Date(2022, 8, 1),
-        winterDateStart2 = new Date(2022, 11, 1);
-    if (currentDate >= winterDateStart || currentDate >= winterDateStart2) {
-        background = winterImg;
-    } else if (currentDate >= springDateStart) {
-        background = springImg;
-    } else if (currentDate >= summerDateStart) {
-        background = summergImg;
-    } else if (currentDate >= autumnDateStart) {
-        background = autumngImg;
-    }
-    return background;
-}
+// function bodyBackground() {
+//     let background;
+//     let currentDate = new Date();
+//     let winterDateStart = new Date(2022, 0, 1),
+//         springDateStart = new Date(2022, 2, 1),
+//         summerDateStart = new Date(2022, 5, 1),
+//         autumnDateStart = new Date(2022, 8, 1),
+//         winterDateStart2 = new Date(2022, 11, 1);
+//     if (currentDate >= winterDateStart || currentDate >= winterDateStart2) {
+//         background = winterImg;
+//     } else if (currentDate >= springDateStart) {
+//         background = springImg;
+//     } else if (currentDate >= summerDateStart) {
+//         background = summergImg;
+//     } else if (currentDate >= autumnDateStart) {
+//         background = autumngImg;
+//     }
+//     return background;
+// }
 
-body.style.background = bodyBackground ();
+// body.style.background = bodyBackground ();
+body.style.background = summergImg;
+
 
 
     function getWearher (url, div) {
@@ -52,6 +54,8 @@ body.style.background = bodyBackground ();
                 // .then(item => console.log(item))
                 .catch(error => console.log(error.message));
     }
+
+    // console.log(new Date());
 
 setInterval(getWearher(urlKyiv, outputKyiv), 300000);
 setInterval(getWearher(urlLondon, outputLondon), 300000);
