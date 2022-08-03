@@ -33,8 +33,7 @@ let body = document.querySelector('body');
 // body.style.background = bodyBackground ();
 body.style.background = summergImg;
 
-// let footer = document.querySelector('footer');
-// console.log(footer);
+let footer = document.querySelector('footer');
 
     function getWearher (url, div) {
         fetch(url) 
@@ -42,26 +41,42 @@ body.style.background = summergImg;
                 .then(json => {
                     const cityName = json.name,
                           weatherDescr = json.weather[0].description;
-                        //   tempCelsius = Math.round(json.main.temp - 273.15) + ' ℃';
                     let tempCelsius = Math.round(json.main.temp - 273.15) + ' ℃';
-
-                    
-                    let footer = document.querySelector('footer');
-                    // console.log(footer);
-                          footer.addEventListener('click', function() {
-                           // if(tempCelsius) {
-                                tempCelsius = (tempCelsius * (9/5)) + 32 + ' °F';
-                           // } else tempCelsius;
-                          });
-                       
+                     
                           img = document.createElement('img');
                           img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
 
+                          let ul = document.createElement('ul');
+
                     [cityName, tempCelsius, weatherDescr, img].map(el => {
-                        let li = document.createElement('li')
+
+                        
+
+                        let li = document.createElement('li');
+
                         li.append(el);
-                        div.append(li);
+
+                        ul.append(li);
+
+                       
                     });
+
+
+
+                    div.append(ul);
+
+                    // let footer = document.querySelector('footer');
+                              footer.addEventListener('click', function() {
+                               // if(tempCelsius) {
+                                div.textContent = '';
+                                    tempCelsius = (parseInt(tempCelsius) * (9/5)) + 32 + ' °F';
+                                    [cityName, tempCelsius, weatherDescr, img].map(el => {
+                                        let li = document.createElement('li');
+                                        li.append(el);
+                                        div.append(li);
+                                    });
+                               // } else tempCelsius;
+                              });
                 })
                 // .then(item => console.log(item))
                 .catch(error => console.log(error.message));
