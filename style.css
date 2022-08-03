@@ -28,7 +28,7 @@ section {
     display: block;
 }
 
-section>div>li {
+section>div>ul {
     list-style: none;
     color:rgb(4, 29, 138);
     font-size:medium;
