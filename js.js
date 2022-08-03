@@ -33,15 +33,27 @@ let body = document.querySelector('body');
 // body.style.background = bodyBackground ();
 body.style.background = summergImg;
 
-
+// let footer = document.querySelector('footer');
+// console.log(footer);
 
     function getWearher (url, div) {
         fetch(url) 
                 .then(resp => resp.json())
                 .then(json => {
                     const cityName = json.name,
-                          weatherDescr = json.weather[0].description,
-                          tempCelsius = Math.round(json.main.temp - 273.15) + ' ℃',
+                          weatherDescr = json.weather[0].description;
+                        //   tempCelsius = Math.round(json.main.temp - 273.15) + ' ℃';
+                    let tempCelsius = Math.round(json.main.temp - 273.15) + ' ℃';
+
+                    
+                    let footer = document.querySelector('footer');
+                    // console.log(footer);
+                          footer.addEventListener('click', function() {
+                           // if(tempCelsius) {
+                                tempCelsius = (tempCelsius * (9/5)) + 32 + ' °F';
+                           // } else tempCelsius;
+                          });
+                       
                           img = document.createElement('img');
                           img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
 
@@ -54,6 +66,10 @@ body.style.background = summergImg;
                 // .then(item => console.log(item))
                 .catch(error => console.log(error.message));
     }
+
+    // function changeTempr() {
+
+    // }
 
     // console.log(new Date());
 
