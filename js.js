@@ -70,6 +70,8 @@ let footer = document.querySelector('footer');
                                // if(tempCelsius) {
                                 div.textContent = '';
                                     tempCelsius = (parseInt(tempCelsius) * (9/5)) + 32 + ' °F';
+                                    img = document.createElement('img');
+                                    img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
                                     [cityName, tempCelsius, weatherDescr, img].map(el => {
                                         let li = document.createElement('li');
                                         li.append(el);
@@ -78,7 +80,6 @@ let footer = document.querySelector('footer');
                                // } else tempCelsius;
                               });
                 })
-                // .then(item => console.log(item))
                 .catch(error => console.log(error.message));
     }
 
