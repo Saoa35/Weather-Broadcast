@@ -69,7 +69,7 @@ let footer = document.querySelector('footer');
                               footer.addEventListener('click', function() {
                                // if(tempCelsius) {
                                 div.textContent = '';
-                                    tempCelsius = (parseInt(tempCelsius) * (9/5)) + 32 + ' °F';
+                                    tempCelsius = Math.trunc((parseInt(tempCelsius) * (9/5)) + 32) + ' °F';
                                     img = document.createElement('img');
                                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
                                     [cityName, tempCelsius, weatherDescr, img].map(el => {
@@ -77,6 +77,7 @@ let footer = document.querySelector('footer');
                                         li.append(el);
                                         div.append(li);
                                     });
+                                    footer.textContent = 'Change to Celsius';
                                // } else tempCelsius;
                               });
                 })
