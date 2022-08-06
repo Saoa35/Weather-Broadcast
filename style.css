@@ -19,7 +19,7 @@ header {
     font-family:monospace;
     font-weight: bold;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     color: rgb(53, 131, 8);
 }
 
@@ -34,7 +34,7 @@ section>div>ul {
     align-items:center;
     list-style: none;
     color:rgb(4, 29, 138);
-    font-size:medium;
+    font-size:large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
 }
 
@@ -61,4 +61,14 @@ footer {
     align-items: center;
     color:white;
     cursor: pointer;
+}
+
+footer :hover {
+    background-color: rgb(72, 190, 54);
+    /* height: 30px; */
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    color:rgb(17, 84, 184);
+    /* cursor: pointer; */
 }
