@@ -4,6 +4,10 @@ body {
     margin-top: 10px;
 }
 
+main {
+    background-color:aquamarine;
+}
+
 header {
     background-color: rgb(111, 160, 224);
     height: 100px;
@@ -68,10 +72,5 @@ footer {
 
 footer:hover {
     background-color: rgb(72, 190, 54);
-    /* height: 30px; */
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
     color:rgb(17, 84, 184);
-    /* cursor: pointer; */
 }
