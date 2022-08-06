@@ -15,8 +15,8 @@ header {
 
 #mainText {
     display: flex;
-    font-size: 35px;
-    font-family: cursive;
+    font-size: 40px;
+    font-family:monospace;
     font-weight: bold;
     justify-content: center;
     align-items: center;
@@ -28,24 +28,29 @@ section {
     display: block;
 }
 
-section>div>ul>li {
+section>div>ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
     list-style: none;
     color:rgb(4, 29, 138);
     font-size:medium;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
 }
 
-section>div :first-child {
+/* section>div :first-child {
     font-size: 25px;
     font-weight: bold;
 
-}
+} */
 
 
 #outputKyiv, #outputLondon, #outputNewYork {
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
+    width: 100%;
+    display: block;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* align-items:center; */
 }
 
 footer {
