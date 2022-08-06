@@ -4,13 +4,16 @@ body {
     margin-top: 10px;
 }
 
-main{
-    border-radius: 50px;
-}
-
 header {
     background-color: rgb(111, 160, 224);
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header>div>p {
+    margin: 0px;
 }
 
 #mainText {
@@ -19,7 +22,7 @@ header {
     font-family:monospace;
     font-weight: bold;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     color: rgb(53, 131, 8);
 }
 
@@ -63,7 +66,7 @@ footer {
     cursor: pointer;
 }
 
-footer :hover {
+footer:hover {
     background-color: rgb(72, 190, 54);
     /* height: 30px; */
     /* display: flex; */
