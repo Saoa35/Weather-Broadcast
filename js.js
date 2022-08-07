@@ -18,7 +18,7 @@ let footer = document.querySelector('footer');
                 .then(json => {
                     const cityName = json.name;
                     const weatherDescr = json.weather[0].description;
-                    
+
                     let temp = Math.round(json.main.temp - 273.15) + ' ℃';
 
                     const img = document.createElement('img');
@@ -28,9 +28,9 @@ let footer = document.querySelector('footer');
 
                     [cityName, temp, weatherDescr, img].map(el => {
                         let li = document.createElement('li');
-                        if(el === temp) {
-                            tempLi = li;                        
-                        }
+
+                        if(el === temp) tempLi = li;
+                        
                         li.append(el);
                         ul.append(li);
                     });
@@ -41,6 +41,7 @@ let footer = document.querySelector('footer');
                     footer.addEventListener('click', function() {
 
                         let currentTemp = tempLi.textContent.includes('℃');
+
                         if(currentTemp) {
                             
                             temp = Math.trunc((parseInt(temp) * (9/5)) + 32) + ' °F';
