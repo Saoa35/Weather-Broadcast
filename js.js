@@ -3,9 +3,8 @@ let urlKyiv = 'http://api.openweathermap.org/data/2.5/weather?id=703448&appid=bf
 let urlLondon = 'http://api.openweathermap.org/data/2.5/weather?id=2643743&appid=bf35cac91880cb98375230fb443a116f';
 let urlNewYork = 'http://api.openweathermap.org/data/2.5/weather?id=5128638&appid=bf35cac91880cb98375230fb443a116f';
 
-let springImg = 'url("Spring.jpg") no-repeat',
-    summergImg = 'url("Summer.jpg") no-repeat';
-
+let summergImg = 'url("Summer.jpg") no-repeat';
+    
 let body = document.querySelector('body');
 
 
@@ -19,13 +18,12 @@ let footer = document.querySelector('footer');
                 .then(json => {
                     const cityName = json.name;
                     const weatherDescr = json.weather[0].description;
-                    let tempCelsius = Math.round(json.main.temp - 273.15) + ' ℃';
+                    let temp = Math.round(json.main.temp - 273.15) + ' ℃';
                     const img = document.createElement('img');
                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
-                    
                     let ul = document.createElement('ul');
 
-                    [cityName, tempCelsius, weatherDescr, img].map(el => {
+                    [cityName, temp, weatherDescr, img].map(el => {
                         let li = document.createElement('li');
                         li.append(el);
                         ul.append(li);
@@ -33,23 +31,36 @@ let footer = document.querySelector('footer');
 
                     div.append(ul);
 
+                    let lii = document.querySelector('section div ul :nth-child(2)');
+
+                    let text = lii.textContent;
+
+                    let inc = text.includes('℃');
+
+                    console.log(inc);
+                    
+
                     footer.addEventListener('click', function() {
-                    // if(tempCelsius) {
-                    div.textContent = '';
-                    tempCelsius = Math.trunc((parseInt(tempCelsius) * (9/5)) + 32) + ' °F';
-                    let ul = document.createElement('ul');
 
-                    [cityName, tempCelsius, weatherDescr, img].map(el => {
-                        let li = document.createElement('li');
-                        li.append(el);
-                        ul.append(li);
+                        
+
+
+                    // if(temp) {
+                        div.textContent = '';
+                        temp = Math.trunc((parseInt(temp) * (9/5)) + 32) + ' °F';
+                        let ul = document.createElement('ul');
+
+                        [cityName, temp, weatherDescr, img].map(el => {
+                            let li = document.createElement('li');
+                            li.append(el);
+                            ul.append(li);
+                        });
+
+                            div.append(ul);
+
+                        footer.textContent = 'Change to Celsius';
+                        // } else temp;
                     });
-
-                        div.append(ul);
-
-                    footer.textContent = 'Change to Celsius';
-                    // } else tempCelsius;
-                });
 
                 })
                 .catch(error => console.log(error.message));
