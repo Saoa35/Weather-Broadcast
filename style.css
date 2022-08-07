@@ -2,18 +2,22 @@ body {
     width: 500px;
     margin: auto;
     margin-top: 10px;
-}
-
-main {
+    /* border: 2px solid white; */
+    /* border-radius: 20px; */
     background-color:rgb(62, 100, 87);
 }
 
+/* main {
+    background-color:rgb(62, 100, 87);
+} */
+
 header {
-    background-color: rgb(111, 160, 224);
+    background-color: rgb(197, 224, 134);
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
 }
 
 header>div>p {
@@ -31,8 +35,9 @@ header>div>p {
 }
 
 section {
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(156, 174, 190);
     display: block;
+    border-radius: 20px;
 }
 
 section>div>ul {
@@ -40,7 +45,7 @@ section>div>ul {
     justify-content: space-evenly;
     align-items:center;
     list-style: none;
-    color:rgb(4, 29, 138);
+    color:rgb(8, 44, 137);
     font-size:large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
 }
@@ -52,17 +57,18 @@ section>div>ul :first-child {
 }
 
 footer {
-    background-color: rgb(54, 97, 190);
+   background-color: rgb(72, 190, 54);
     height: 30px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:white;
+    color:rgb(17, 84, 184);
     cursor: pointer;
+    border-radius: 20px;
 }
 
 footer:hover {
-    background-color: rgb(72, 190, 54);
-    color:rgb(17, 84, 184);
+    background-color: rgb(193, 25, 25);
+    color:white;
 }
