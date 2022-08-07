@@ -2,14 +2,8 @@ body {
     width: 500px;
     margin: auto;
     margin-top: 10px;
-    /* border: 2px solid white; */
-    /* border-radius: 20px; */
     background-color:rgb(62, 100, 87);
 }
-
-/* main {
-    background-color:rgb(62, 100, 87);
-} */
 
 header {
     background-color: rgb(197, 224, 134);
