@@ -18,72 +18,51 @@ let footer = document.querySelector('footer');
                 .then(json => {
                     const cityName = json.name;
                     const weatherDescr = json.weather[0].description;
+                    
                     let temp = Math.round(json.main.temp - 273.15) + ' ℃';
 
                     const img = document.createElement('img');
                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
                     let ul = document.createElement('ul');
+                    let tempLi;
 
                     [cityName, temp, weatherDescr, img].map(el => {
                         let li = document.createElement('li');
+                        if(el === temp) {
+                            tempLi = li;                        
+                        }
                         li.append(el);
                         ul.append(li);
                     });
 
                     div.append(ul);
-
-                    let currentTemp = document.querySelector('section div ul :nth-child(2)').textContent.includes('℃');
-                    // let currentTemp2 = document.querySelector('section div ul :nth-child(2)').textContent.includes('°F');
-
-                    // let allLi = document.querySelector('section div ul :nth-child(2)').textContent;
-                    // let arr = Array.from(allLi);
-
-                    // console.log(arr);
                     
 
                     footer.addEventListener('click', function() {
 
+                        let currentTemp = tempLi.textContent.includes('℃');
                         if(currentTemp) {
-                            div.textContent = '';
+                            
                             temp = Math.trunc((parseInt(temp) * (9/5)) + 32) + ' °F';
-                            let ul = document.createElement('ul');
 
-                            [cityName, temp, weatherDescr, img].map(el => {
-                                let li = document.createElement('li');
-                                li.append(el);
-                                ul.append(li);
-                            });
-
-                                div.append(ul);
+                            tempLi.textContent = temp;
 
                             footer.textContent = 'Change to Celsius';
 
-                            // console.log(document.querySelector('section div ul :nth-child(2)').textContent);
-
-                        } else  window.location.reload();  
-                            // if(currentTemp2) {
-                                // div.textContent = '';
-                                // let ul = document.createElement('ul');
-                                // temp = Math.round(json.main.temp - 273.15) + ' ℃';
-                                // [cityName, temp, weatherDescr, img].map(el => {
-                                //     let li = document.createElement('li');
-                                //     li.append(el);
-                                //     ul.append(li);
-                                // });
-            
-                                // div.append(ul);
-                                // footer.textContent = 'Change to Fahrenheit';
-                            // }
-
+                        
+                        } else {
+                           
+                                temp = Math.round(json.main.temp - 273.15) + ' ℃';
+                                tempLi.textContent = temp;
+                               
+                                footer.textContent = 'Change to Fahrenheit';
+                        }
                     });
 
                 })
                 .catch(error => console.log(error.message));
     }
 
-    // function changeTempr() {
-
-    // }
 
 setInterval(getWearher(urlKyiv, outputKyiv), 300000);
 setInterval(getWearher(urlLondon, outputLondon), 300000);
