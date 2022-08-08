@@ -7,7 +7,6 @@ let backgroundImg = 'url("backgroundImg.jpg")';
     
 let body = document.querySelector('body');
 
-
 body.style.background = backgroundImg;
 
 let footer = document.querySelector('footer');
@@ -23,6 +22,7 @@ let footer = document.querySelector('footer');
 
                     const img = document.createElement('img');
                     img.src = 'http://openweathermap.org/img/wn/' + json.weather[0]['icon'] + '@2x.png';
+
                     let ul = document.createElement('ul');
                     let tempLi;
 
@@ -35,29 +35,21 @@ let footer = document.querySelector('footer');
                         ul.append(li);
                     });
 
-                    div.append(ul);
-                    
+                    div.append(ul);  
 
                     footer.addEventListener('click', function() {
 
                         let currentTemp = tempLi.textContent.includes('℃');
 
-                        if(currentTemp) {
-                            
+                        if(currentTemp) {    
                             temp = Math.trunc((parseInt(temp) * (9/5)) + 32) + ' °F';
-
                             tempLi.textContent = temp;
-
                             footer.textContent = 'Change to Celsius';
-
-                        
-                        } else {
-                           
+                        } else {                        
                                 temp = Math.round(json.main.temp - 273.15) + ' ℃';
-                                tempLi.textContent = temp;
-                               
+                                tempLi.textContent = temp;   
                                 footer.textContent = 'Change to Fahrenheit';
-                        }
+                            }
                     });
 
                 })
