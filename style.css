@@ -35,9 +35,11 @@ section {
 }
 
 section>div>ul {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:20px;
     align-items:center;
+
     list-style: none;
     color:rgb(8, 44, 137);
     font-size:large;
